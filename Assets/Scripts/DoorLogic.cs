@@ -13,7 +13,7 @@ public class DoorLogic : MonoBehaviour
         Locked,
     }
 
-    public Vector3 openingDirection = new Vector3(0f, 0f, 0f);
+    public Quaternion openingDirection = Quaternion.Euler(0f, 0f, 0f);
 
     public float waitTime = 5f;
     private float _startOfWait = 0f;
@@ -22,15 +22,15 @@ public class DoorLogic : MonoBehaviour
     public bool unlockDoor = false;
     public bool doorCycle = true;
 
-    private Vector3 _closedPosition = Vector3.zero;
-    private Vector3 _openPosition = Vector3.zero;
+    private Quaternion _closedPosition;
+    private Quaternion _openPosition;
 
     public DoorStates state = DoorStates.Closed;
 
     void Start()
     {
-        _closedPosition = transform.position;
-        _openPosition = transform.position + openingDirection;
+        _closedPosition = transform.rotation;
+        _openPosition = openingDirection;
     }
 
     void Update()
@@ -54,11 +54,11 @@ public class DoorLogic : MonoBehaviour
                 }
 
                 break;
-
+                
             case DoorStates.Closing:
-                transform.position = Vector3.MoveTowards(transform.position, _closedPosition, speed * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, _closedPosition, speed * Time.deltaTime);
 
-                if (Vector3.Distance(transform.position, _closedPosition) < 0.01f)
+                if (Quaternion.Dot(transform.rotation, _closedPosition) < 0.01f)
                 {
                     state = DoorStates.Closed;
                     _startOfWait = Time.time;
@@ -66,9 +66,9 @@ public class DoorLogic : MonoBehaviour
                 break;
 
             case DoorStates.Opening:
-                transform.position = Vector3.MoveTowards(transform.position, _openPosition, speed * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, _openPosition, speed * Time.deltaTime);
 
-                if (Vector3.Distance(transform.position, _openPosition) < 0.01f)
+                if (Quaternion.Dot(transform.rotation, _openPosition) < 0.01f)
                 {
                     state = DoorStates.Opened;
                     _startOfWait = Time.time;

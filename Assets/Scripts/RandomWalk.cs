@@ -8,7 +8,12 @@ using UnityEngine.AI;
 public class RandomWalk : MonoBehaviour
 {
     public float _Range = 25.0f;
+    public float detRange;
+
     NavMeshAgent _Agent;
+
+    public Transform zombie;
+    public Transform player;
 
     void Start()
     {
@@ -31,5 +36,15 @@ public class RandomWalk : MonoBehaviour
         Vector3 randomPosition = _Range * Random.insideUnitCircle;
         randomPosition = new Vector3(randomPosition.x, 0, randomPosition.y);
         _Agent.destination = transform.position + randomPosition;
+
+        if (Vector3.Distance(zombie.position, player.position) < detRange)
+        {
+            _Agent.destination = player.position;
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Destroy(col.gameObject);
     }
 }

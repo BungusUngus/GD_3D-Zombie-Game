@@ -33,7 +33,7 @@ public class FlashLight : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ReplaceBattery(1f);
+            ReplaceBattery(1.6f);
         }
     }
     public void ReplaceBattery(float amount)

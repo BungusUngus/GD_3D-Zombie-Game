@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BatteryLogic : FlashLight
+public class BatteryLogic : MonoBehaviour
 {
+  
 
     private void OnTriggerEnter(Collider other)
     {

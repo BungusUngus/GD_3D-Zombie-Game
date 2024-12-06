@@ -4698,6 +4698,11 @@ GameObject:
   - component: {fileID: 319932630}
   - component: {fileID: 319932634}
   - component: {fileID: 319932636}
+  - component: {fileID: 319932638}
+  - component: {fileID: 319932637}
+  - component: {fileID: 319932641}
+  - component: {fileID: 319932640}
+  - component: {fileID: 319932639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4724,7 +4729,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.83
+  m_Radius: 0.6
   m_Height: 3.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -4763,8 +4768,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 2.3
+  m_Height: 1
+  m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -4785,6 +4790,84 @@ MonoBehaviour:
   controller: {fileID: 319932634}
   speed: 10
   rotationSpeed: 180
+--- !u!114 &319932637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319932629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dd3e635eb5d7240914057f0106d9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 3676743447183382193}
+  door: {fileID: 3173020054032458235}
+--- !u!195 &319932638
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319932629}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &319932639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319932629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dd3e635eb5d7240914057f0106d9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 1671518339}
+  door: {fileID: 953275306}
+--- !u!114 &319932640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319932629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dd3e635eb5d7240914057f0106d9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 927774112}
+  door: {fileID: 1371111361}
+--- !u!114 &319932641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319932629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dd3e635eb5d7240914057f0106d9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 558377713}
+  door: {fileID: 360478712}
 --- !u!1 &321064173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,7 +6986,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5171589420534636736, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_Name
-      value: Prefab_Door (10)
+      value: Prefab_Door Purple
       objectReference: {fileID: 0}
     - target: {fileID: 5516625327919659642, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_LocalScale.z
@@ -6983,12 +7066,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b99f42c9aacd544891c4210f756d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: {x: 0, y: 0, z: 0}
+  openingDirection: {x: 0, y: 0, z: -3}
   waitTime: 5
   speed: 5
   unlockDoor: 0
-  doorCycle: 1
-  state: 1
+  doorCycle: 0
+  state: 4
 --- !u!1001 &362468894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9989,9 +10072,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1250446592}
     m_Modifications:
+    - target: {fileID: 1055250210755643621, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068616160910876773, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_Name
-      value: Prefab_Key Card (3)
+      value: Prefab_Key Card Purple
       objectReference: {fileID: 0}
     - target: {fileID: 7589432194869623519, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15520,9 +15607,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1250446592}
     m_Modifications:
+    - target: {fileID: 1055250210755643621, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068616160910876773, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_Name
-      value: Prefab_Key Card (2)
+      value: Prefab_Key Card Red
       objectReference: {fileID: 0}
     - target: {fileID: 7589432194869623519, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15734,12 +15825,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b99f42c9aacd544891c4210f756d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: {x: 0, y: 0, z: 0}
+  openingDirection: {x: 0, y: 0, z: -3}
   waitTime: 5
   speed: 5
   unlockDoor: 0
-  doorCycle: 1
-  state: 1
+  doorCycle: 0
+  state: 4
 --- !u!43 &955657336
 Mesh:
   m_ObjectHideFlags: 0
@@ -21403,7 +21494,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5171589420534636736, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_Name
-      value: Prefab_Door (13)
+      value: Prefab_Door Red
       objectReference: {fileID: 0}
     - target: {fileID: 5516625327919659642, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_LocalScale.z
@@ -21483,12 +21574,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b99f42c9aacd544891c4210f756d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: {x: 0, y: 0, z: 0}
+  openingDirection: {x: 0, y: 0, z: 3}
   waitTime: 5
   speed: 5
   unlockDoor: 0
-  doorCycle: 1
-  state: 1
+  doorCycle: 0
+  state: 4
 --- !u!1 &1371590505
 GameObject:
   m_ObjectHideFlags: 0
@@ -24107,6 +24198,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4834336921518398468, guid: d171a5a1488f2dd4c84afc042f02646d, type: 3}
   m_PrefabInstance: {fileID: 1427665231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1438196078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438196081}
+  - component: {fileID: 1438196080}
+  - component: {fileID: 1438196079}
+  m_Layer: 0
+  m_Name: Door Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1438196079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438196078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dd3e635eb5d7240914057f0106d9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 0}
+  door: {fileID: 0}
+--- !u!195 &1438196080
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438196078}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!4 &1438196081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438196078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1443884731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27777,9 +27937,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1250446592}
     m_Modifications:
+    - target: {fileID: 1055250210755643621, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068616160910876773, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_Name
-      value: Prefab_Key Card (1)
+      value: Prefab_Key Card Exit
       objectReference: {fileID: 0}
     - target: {fileID: 7589432194869623519, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37620,7 +37784,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5171589420534636736, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_Name
-      value: Prefab_Door
+      value: Prefab_Door Blue
       objectReference: {fileID: 0}
     - target: {fileID: 5516625327919659642, guid: 775a07cc9e3ed8a4f978f7a41ee088a5, type: 3}
       propertyPath: m_LocalScale.z
@@ -37700,12 +37864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b99f42c9aacd544891c4210f756d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: {x: 0, y: 0, z: 0}
+  openingDirection: {x: 0, y: 0, z: 3}
   waitTime: 5
   speed: 5
   unlockDoor: 0
-  doorCycle: 1
-  state: 1
+  doorCycle: 0
+  state: 4
 --- !u!1001 &3676743447183382192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37714,9 +37878,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1250446592}
     m_Modifications:
+    - target: {fileID: 1055250210755643621, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068616160910876773, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_Name
-      value: Prefab_Key Card
+      value: Prefab_Key Card Blue
       objectReference: {fileID: 0}
     - target: {fileID: 7589432194869623519, guid: 6843175ceac51614eb2c6fc5ecec7aed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37965,9 +38133,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5064993500624715972, guid: 497f7ea340606e94f9653f5991d8ea94, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8482421113537477240, guid: 497f7ea340606e94f9653f5991d8ea94, type: 3}
       propertyPath: m_Name
       value: Prefab_Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482421113537477240, guid: 497f7ea340606e94f9653f5991d8ea94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9150273905403683010, guid: 497f7ea340606e94f9653f5991d8ea94, type: 3}
       propertyPath: m_LocalScale.x
@@ -38055,7 +38231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Range: 50
-  detRange: 10
+  detRange: 1
   zombie: {fileID: 8972740886509667144}
   player: {fileID: 319932633}
 --- !u!195 &8972740886509667146
@@ -38068,7 +38244,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -38094,3 +38270,4 @@ SceneRoots:
   - {fileID: 52970517}
   - {fileID: 757302601}
   - {fileID: 355250643}
+  - {fileID: 1438196081}

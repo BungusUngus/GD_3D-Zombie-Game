@@ -10,13 +10,13 @@ public class AILogic : MonoBehaviour
     //Reference to other things
     public Transform key;
     public DoorLogic door;
-    public Transform player;
+    //public Transform player;
 
     //Self Reference
-    public RandomWalk randomWalk;
-    private NavMeshAgent _agent;
+    //public RandomWalk randomWalk;
+    //private NavMeshAgent _agent;
 
-    void Start()
+    /*void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
     }
@@ -28,7 +28,7 @@ public class AILogic : MonoBehaviour
         {
             _agent.destination = key.position;
         }
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {

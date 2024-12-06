@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3099502995549014955}
   - component: {fileID: 6477798466391667559}
   m_Layer: 0
-  m_Name: Wall w_Hole
+  m_Name: Prefab_Wall w_Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -60,9 +60,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d191193560d877549a60c5649204f3c1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 230f57b4d13b4f04ab27b09bf0a95fe9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 230f57b4d13b4f04ab27b09bf0a95fe9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 230f57b4d13b4f04ab27b09bf0a95fe9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7918618c3047709488e14a08257955dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ba256f835f656040adc174c93c47f63, type: 3}
       propertyPath: m_Name
-      value: LowPolyD4_BL
+      value: Prefab_Battery
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

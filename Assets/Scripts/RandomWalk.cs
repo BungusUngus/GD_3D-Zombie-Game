@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
@@ -14,6 +15,8 @@ public class RandomWalk : MonoBehaviour
 
     public Transform zombie;
     public Transform player;
+
+    public GameObject deathScreen;
 
     void Start()
     {
@@ -45,6 +48,14 @@ public class RandomWalk : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Destroy(col.gameObject);
+        Time.timeScale = 0;
+
+        deathScreen.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("AHHH");
+        Time.timeScale = 1;
     }
 }
